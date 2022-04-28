@@ -23,6 +23,12 @@ public class Conversor {
     protected Bits decimalParaBin(double decimal, int alcance) {
         Bits bits = new Bits();
 
+        if (decimal == 0) {
+            // preenche a lista com 0;
+            for (int i = 0; i < alcance; i++) bits.add(0);
+            return bits;
+        }
+
         int contador = alcance;
 
         while (contador >= -1) {
